@@ -1,0 +1,43 @@
+<span class="node-details">
+    <!-- ICON -->
+    <span *ngIf="showNodeDetails() || showNodeNameInput()" class="node-type-image-container">
+        <img class="node-icon" [src]="getNodeIconPath()">
+    </span>
+    <!-- NODE DETAILS -->
+    <span *ngIf="showNodeDetails()" class="node-details-label"> 
+        <span class="label-text"> {{ getNode().name }}</span>
+        <button class="show-on-hover button-inverse" *ngIf="canAddChild()" (click)="addChild()">
+            <span class="material-icons">
+                add_circle_outline
+            </span>
+        </button>
+        <button class="show-on-hover button-inverse" (click)="removeChild()">
+            <span class="material-icons">
+                highlight_off
+            </span>
+        </button>
+    </span> 
+    <!-- ENTER NAME -->
+    <span *ngIf="showNodeNameInput()" class="node-name-input-container"> 
+        <input type="text" #nodeName appAutofocus/>
+        <button (click)="setName(nodeName.value)" class="button-inverse">
+            <span class="material-icons">
+                check_circle_outline
+            </span>
+        </button>
+        <button (click)="removeChild()" class="button-inverse">
+            <span class="material-icons">
+                highlight_off
+            </span>
+        </button>
+    </span>
+    <!-- SELECT TYPE -->
+    <span *ngIf="showTypeSelect()">
+        <button (click)="setType('file')">File</button>
+        <button (click)="setType('folder')">Folder</button>
+    </span>
+</span>
+<!-- CHILD NODES -->
+<div class="children">
+    <app-folder-structure-node class="child" *ngFor="let child of getNode().children" [node]="child" [parent]="getNode()"></app-folder-structure-node>
+</div>

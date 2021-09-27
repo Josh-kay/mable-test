@@ -1,0 +1,13 @@
+<div class="folder-structure-container">
+    <div>
+        <button class="add-folder-btn" (click)="addRootLevelNode()">
+            Add folder to root
+        </button>
+        <div>
+            <app-folder-structure-node *ngFor="let child of getRootNode().children" [node]="child" [parent]="getRootNode()"></app-folder-structure-node>
+        </div>
+    </div>
+</div>
+<div class="json-container">
+    {{ getRootNode() | json }}
+</div>

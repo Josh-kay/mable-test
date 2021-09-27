@@ -1,0 +1,31 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;600&display=swap');
+
+* {
+    font-family: 'Roboto Mono', monospace;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    background: #efefef;
+}
+
+button {
+    background: coral;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+        background: rgb(245, 82, 23);
+    }
+
+    &.button-inverse {
+        color: coral;
+        background: #ffffff;
+        &:hover {
+            color: rgb(245, 82, 23);
+        }
+    }
+}

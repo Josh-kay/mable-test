@@ -1,0 +1,86 @@
+.show-on-hover {
+    display: none;
+}
+.node-details {
+    display: inline-flex;
+    min-height: 2rem;
+    align-items: center;
+
+    .node-type-image-container {
+        display: inline-flex;
+        display: inline-block;
+        width: 1rem;
+        padding-left: 0.5rem;
+    }
+    .node-name-input-container {
+        display: inline-flex;
+        margin-left: 1rem;
+        button {
+            display: inline-flex;
+        }
+        input {
+            margin-right: 1rem;
+        }
+    }
+    .node-details-label {
+        display: flex;
+        align-items: center;
+        margin-left: 1rem;
+        .label-text {
+            margin-right: 1rem;
+        }
+    }
+    .node-icon {
+        height: 1rem;
+    }
+    &:hover {
+        box-shadow: 0 0 0 2px coral;
+        .show-on-hover {
+            display: inline-flex;
+        }
+    }
+    button {
+        &.button-inverse {
+            padding: 0;
+        }
+    }
+}
+
+.children {
+    margin-left: 1rem; 
+
+    &>.child>.node-details  {
+        position: relative;
+
+        &:before{
+            content:""; 
+            position: absolute; 
+            z-index: 1;
+            top:.0;; 
+            right:auto; 
+            bottom:0; 
+            left: -0.75rem; 
+            margin: auto;
+            border-right: solid coral 0.15rem;
+            width: 0; 
+            height: auto;
+        }
+
+        &:after{
+            content: ""; 
+            display: block; 
+            position: absolute;
+            left:-1rem; 
+            top:0;
+            bottom:0;
+            margin: auto .25Rem auto .25Rem;
+            border-top: solid coral 0.15rem;
+            width: 0.5rem; 
+            height: 0;
+        }
+    }
+    
+    &>.child:last-child>.node-details:before {
+        bottom: 1rem; 
+    }
+}

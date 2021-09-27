@@ -1,0 +1,25 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.folder-structure-container {
+    border-radius: 10px;
+    background-color: #ffffff;
+    min-height: 500px;
+    width: 500px;
+    margin: 3rem;
+    padding: 1rem;
+    box-shadow: 0 3px 1px -2px rgb(0 0 0 / 14%), 0 2px 2px 0 rgb(0 0 0 / 10%), 0 1px 5px 0 rgb(0 0 0 / 8%);
+
+    .add-folder-btn {
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+}
+
+.json-container {
+    width: 75%;
+}
